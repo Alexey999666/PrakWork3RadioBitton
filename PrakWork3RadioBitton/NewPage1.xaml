@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PrakWork3RadioBitton.NewPage1"
+             Title="Manus_Enter" x:Name="cpProga">
+    <ScrollView>
+        <VerticalStackLayout
+               Padding="30,0"
+               Spacing="25" IsEnabled="True">
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="Включение/Выключение" VerticalOptions="Center"/>
+                <Switch IsToggled="True" Toggled="tgldOnOffManus_Toggled"/>
+            </StackLayout>
+            <StackLayout  Orientation="Vertical" x:Name="slManus" IsEnabled="True">
+                <Label Text="Введите значение"/>
+                <Entry x:Name="entManusEnter"/>
+                <RadioButton Content="Километр" x:Name="rbManusKilo" />
+                <RadioButton Content="Метр"/>
+                <RadioButton Content="Дециметр"/>
+                <RadioButton Content="Сантиметр"/>
+                <RadioButton Content="Миллиметр"/>
+                <Button Text="Рассчитать" Clicked="btnManusRez_Clicked"/>
+                <Entry x:Name="entManusRez" IsReadOnly="True"/>
+            </StackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+    
+</ContentPage>

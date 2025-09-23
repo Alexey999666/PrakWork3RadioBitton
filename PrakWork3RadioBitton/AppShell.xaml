@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="PrakWork3RadioBitton.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:PrakWork3RadioBitton"
+    Shell.FlyoutBehavior="Disabled"
+    Title="PrakWork3RadioBitton">
+    <TabBar>
+        <Tab  Title="MainPage">
+            <ShellContent
+            Title="Практическая 4 "
+             ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+        </Tab>
+        <Tab Title="Program">
+            <ShellContent Title="Manus_Enter" ContentTemplate="{DataTemplate local:NewPage1}" />
+            <ShellContent Title="Auto_Enter" ContentTemplate="{DataTemplate local:NewPage2}" />
+        </Tab>
+    
+        
+    </TabBar>
+
+</Shell>
