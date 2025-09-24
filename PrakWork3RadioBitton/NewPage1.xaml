@@ -15,10 +15,10 @@
                 <Label Text="Введите значение"/>
                 <Entry x:Name="entManusEnter"/>
                 <RadioButton Content="Километр" x:Name="rbManusKilo" />
-                <RadioButton Content="Метр"/>
-                <RadioButton Content="Дециметр"/>
-                <RadioButton Content="Сантиметр"/>
-                <RadioButton Content="Миллиметр"/>
+                <RadioButton Content="Метр" x:Name="rbManusMetr"/>
+                <RadioButton Content="Дециметр" x:Name="rbManusDeci"/>
+                <RadioButton Content="Сантиметр" x:Name="rbManusSanti"/>
+                <RadioButton Content="Миллиметр" x:Name="rbManusMilli"/>
                 <Button Text="Рассчитать" Clicked="btnManusRez_Clicked"/>
                 <Entry x:Name="entManusRez" IsReadOnly="True"/>
             </StackLayout>

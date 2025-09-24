@@ -9,9 +9,14 @@
             InitializeComponent();
         }
 
-        private void btnSwitchTab_Click(object sender, EventArgs e)
+        private async void btnSwitchTab_Click(object sender, EventArgs e)
         {
-           
+            //await Navigation.PushAsync(new NewPage1());
+        }
+
+        async private void btnInfo_Click(object sender, EventArgs e)
+        {
+            await DisplayAlert("Информация", "Андрианов Алексей ИСП-41 Вариант 14 Составить программу, которая бы по значению переменной Х, означающему некоторую длину в следующих единицах измерения: дециметр, километр, метр, миллиметр, сантиметр; выдавала бы эту длину в метрах.", "OK");
         }
     }
 

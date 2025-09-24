@@ -26,8 +26,15 @@ public partial class NewPage1 : ContentPage
         {
             if (rbManusKilo.IsChecked == true)
             {
-                num = num / 1000;
+                double Knum = num / 1000;
+               
                 entManusRez.Text = num.ToString();
+                rbManusKilo.IsChecked = false;
+            }
+            else if (rbManusMetr.IsChecked == true)
+            {
+                entManusEnter.Text = num.ToString();
+                rbManusMetr.IsChecked = false;
             }
         }
         

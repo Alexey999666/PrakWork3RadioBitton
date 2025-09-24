@@ -18,7 +18,7 @@
             <ShellContent Title="Auto_Enter" ContentTemplate="{DataTemplate local:NewPage2}" />
         </Tab>
     
-        
+                                                                                       
     </TabBar>
 
 </Shell>
