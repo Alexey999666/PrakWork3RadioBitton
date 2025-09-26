@@ -1,4 +1,6 @@
 
+using System.Diagnostics.Metrics;
+
 namespace PrakWork3RadioBitton;
 
 public partial class NewPage1 : ContentPage
@@ -26,17 +28,38 @@ public partial class NewPage1 : ContentPage
         {
             if (rbManusKilo.IsChecked == true)
             {
-                double Knum = num / 1000;
+                double Kilo = num * 1000;
                
-                entManusRez.Text = num.ToString();
-                rbManusKilo.IsChecked = false;
+                entManusRez.Text = Kilo.ToString();
+                
             }
             else if (rbManusMetr.IsChecked == true)
             {
-                entManusEnter.Text = num.ToString();
-                rbManusMetr.IsChecked = false;
+                double metr = num;
+                entManusRez.Text = metr.ToString();
+                
+            }
+            else if(rbManusDeci.IsChecked == true) 
+            {
+                double deci = num / 10;
+                entManusRez.Text = deci.ToString();
+            }
+            else if(rbManusSanti.IsChecked == true)
+            {
+                double santi = num / 100;
+                entManusRez.Text = santi.ToString();
+            }
+            else if(rbManusMilli.IsChecked == true)
+            {
+                double milli = num / 1000;
+                entManusRez.Text = milli.ToString();
             }
         }
-        
+        else
+        {
+            string error = "ERROR";
+            entManusRez.Text = error.ToString();
+        }
+            
     }
 }

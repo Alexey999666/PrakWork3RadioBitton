@@ -14,7 +14,7 @@
             <StackLayout  Orientation="Vertical" x:Name="slManus" IsEnabled="True">
                 <Label Text="Введите значение"/>
                 <Entry x:Name="entManusEnter"/>
-                <RadioButton Content="Километр" x:Name="rbManusKilo" />
+                <RadioButton Content="Километр" x:Name="rbManusKilo"  />
                 <RadioButton Content="Метр" x:Name="rbManusMetr"/>
                 <RadioButton Content="Дециметр" x:Name="rbManusDeci"/>
                 <RadioButton Content="Сантиметр" x:Name="rbManusSanti"/>
