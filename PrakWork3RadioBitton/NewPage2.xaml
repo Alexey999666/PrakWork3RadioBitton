@@ -3,10 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PrakWork3RadioBitton.NewPage2"
              Title="Auto_Enter">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout
+           Padding="30,0"
+           Spacing="25" IsEnabled="True">
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="Включение/Выключение" VerticalOptions="Center" />
+                <Switch IsToggled="False" Toggled="tgldOnOffAuto_Toggled" />
+            </StackLayout>
+            <StackLayout  Orientation="Vertical" x:Name="slAuto" IsEnabled="False">
+                <Label Text="Введите значение"/>
+                <Entry x:Name="entAutoEnter" TextChanged="entAutoEnter_TextChanged"/>
+                <RadioButton Content="Километр" x:Name="rbAutoKilo" CheckedChanged="ccrbAutoKilo"  />
+                <RadioButton Content="Метр" x:Name="rbAutoMetr" CheckedChanged="ccrbAutoMetr"/>
+                <RadioButton Content="Дециметр" x:Name="rbAutoDeci" CheckedChanged="ccrbAutoDeci"/>
+                <RadioButton Content="Сантиметр" x:Name="rbAutoSanti" CheckedChanged="ccrbAutoSanti"/>
+                <RadioButton Content="Миллиметр" x:Name="rbAutoMilli" CheckedChanged="ccrbAutoMilli"/>
+                <Label Text="Результат в метрах:"/>
+                <Entry x:Name="entAutoRez" IsReadOnly="True"/>
+            </StackLayout>
+            <Button Clicked="btnSwitchBack_Click" Text="На главную"/>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

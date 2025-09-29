@@ -13,15 +13,16 @@
             </StackLayout>
             <StackLayout  Orientation="Vertical" x:Name="slManus" IsEnabled="True">
                 <Label Text="Введите значение"/>
-                <Entry x:Name="entManusEnter"/>
+                <Entry x:Name="entManusEnter" TextChanged="tcentManusEnter"/>
                 <RadioButton Content="Километр" x:Name="rbManusKilo"  />
                 <RadioButton Content="Метр" x:Name="rbManusMetr"/>
                 <RadioButton Content="Дециметр" x:Name="rbManusDeci"/>
                 <RadioButton Content="Сантиметр" x:Name="rbManusSanti"/>
                 <RadioButton Content="Миллиметр" x:Name="rbManusMilli"/>
-                <Button Text="Рассчитать" Clicked="btnManusRez_Clicked"/>
+                <Button Text="Перевести в метры" Clicked="btnManusRez_Clicked"/>
                 <Entry x:Name="entManusRez" IsReadOnly="True"/>
             </StackLayout>
+            <Button Clicked="btnSwitchBack_Click" Text="На главную"/>
 
         </VerticalStackLayout>
     </ScrollView>

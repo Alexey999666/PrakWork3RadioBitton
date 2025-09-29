@@ -62,4 +62,14 @@ public partial class NewPage1 : ContentPage
         }
             
     }
+
+    private void tcentManusEnter(object sender, TextChangedEventArgs e)
+    {
+        entManusRez.Text = "";
+    }
+
+    private async void btnSwitchBack_Click(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//MainPage");
+    }
 }

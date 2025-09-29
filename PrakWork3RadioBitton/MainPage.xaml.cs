@@ -11,7 +11,7 @@
 
         private async void btnSwitchTab_Click(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new NewPage1());
+            await Shell.Current.GoToAsync("//Program");
         }
 
         async private void btnInfo_Click(object sender, EventArgs e)

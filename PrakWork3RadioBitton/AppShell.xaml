@@ -13,9 +13,9 @@
              ContentTemplate="{DataTemplate local:MainPage}"
             Route="MainPage" />
         </Tab>
-        <Tab Title="Program">
-            <ShellContent Title="Manus_Enter" ContentTemplate="{DataTemplate local:NewPage1}" />
-            <ShellContent Title="Auto_Enter" ContentTemplate="{DataTemplate local:NewPage2}" />
+        <Tab Title="Program" Route="Program">
+            <ShellContent Title="Manus_Enter" ContentTemplate="{DataTemplate local:NewPage1}"  Route="ManusEnter" />
+            <ShellContent Title="Auto_Enter" ContentTemplate="{DataTemplate local:NewPage2}" Route="AutoEnter" />
         </Tab>
     
                                                                                        
