@@ -117,8 +117,8 @@ public partial class NewPage2 : ContentPage
         }
     }
 
-    private async void btnSwitchBack_Click(object sender, EventArgs e)
+    private void btnSwitchBack_Click(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("//MainPage");
+        Shell.Current.GoToAsync("//MainPage");
     }
 }

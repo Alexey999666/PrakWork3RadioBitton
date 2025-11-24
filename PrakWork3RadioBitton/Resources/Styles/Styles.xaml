@@ -2,7 +2,8 @@
 <?xaml-comp compile="true" ?>
 <ResourceDictionary 
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:PrakWork3RadioBitton.NewPage1">
 
     <Style TargetType="ActivityIndicator">
         <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
@@ -27,26 +28,13 @@
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource PrimaryDarkText}}" />
         <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryDark}}" />
         <Setter Property="FontFamily" Value="OpenSansRegular"/>
-        <Setter Property="FontSize" Value="14"/>
-        <Setter Property="BorderWidth" Value="0"/>
-        <Setter Property="CornerRadius" Value="8"/>
-        <Setter Property="Padding" Value="14,10"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="BorderWidth" Value="10"/>
+        <Setter Property="CornerRadius" Value="70"/>
+        <Setter Property="Padding" Value="14,17"/>
         <Setter Property="MinimumHeightRequest" Value="44"/>
         <Setter Property="MinimumWidthRequest" Value="44"/>
-        <Setter Property="VisualStateManager.VisualStateGroups">
-            <VisualStateGroupList>
-                <VisualStateGroup x:Name="CommonStates">
-                    <VisualState x:Name="Normal" />
-                    <VisualState x:Name="Disabled">
-                        <VisualState.Setters>
-                            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource Gray200}}" />
-                            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray600}}" />
-                        </VisualState.Setters>
-                    </VisualState>
-                    <VisualState x:Name="PointerOver" />
-                </VisualStateGroup>
-            </VisualStateGroupList>
-        </Setter>
+        
     </Style>
 
     <Style TargetType="CheckBox">
@@ -112,24 +100,23 @@
 
     <Style TargetType="Entry">
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
-        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="BackgroundColor" Value="Khaki" />
         <Setter Property="FontFamily" Value="OpenSansRegular"/>
-        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontSize" Value="20" />
         <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray500}}" />
         <Setter Property="MinimumHeightRequest" Value="44"/>
         <Setter Property="MinimumWidthRequest" Value="44"/>
-        <Setter Property="VisualStateManager.VisualStateGroups">
-            <VisualStateGroupList>
-                <VisualStateGroup x:Name="CommonStates">
-                    <VisualState x:Name="Normal" />
-                    <VisualState x:Name="Disabled">
-                        <VisualState.Setters>
-                            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}" />
-                        </VisualState.Setters>
-                    </VisualState>
-                </VisualStateGroup>
-            </VisualStateGroupList>
-        </Setter>
+        <Style.Triggers>
+            <Trigger TargetType="Entry" Property="IsFocused" Value="True" >
+                <Setter  Property="BackgroundColor" Value="DarkOliveGreen"/>
+                <Setter  Property="TextColor" Value="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Magenta}}"/>
+                <Setter Property="FontSize" Value="25"/>
+            </Trigger>
+            <EventTrigger Event="TextChanged">
+                <local:EntryValidation/>
+            </EventTrigger>
+        </Style.Triggers>
+        
     </Style>
 
     <Style TargetType="Frame">
@@ -163,21 +150,10 @@
 
     <Style TargetType="Label">
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
-        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="BackgroundColor" Value="DarkOrange" />
         <Setter Property="FontFamily" Value="OpenSansRegular" />
-        <Setter Property="FontSize" Value="14" />
-        <Setter Property="VisualStateManager.VisualStateGroups">
-            <VisualStateGroupList>
-                <VisualStateGroup x:Name="CommonStates">
-                    <VisualState x:Name="Normal" />
-                    <VisualState x:Name="Disabled">
-                        <VisualState.Setters>
-                            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}" />
-                        </VisualState.Setters>
-                    </VisualState>
-                </VisualStateGroup>
-            </VisualStateGroupList>
-        </Setter>
+        <Setter Property="FontSize" Value="15" />
+
     </Style>
 
     <Style TargetType="Span">
@@ -243,24 +219,20 @@
     </Style>
 
     <Style TargetType="RadioButton">
-        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="BackgroundColor" Value="Orchid"/>
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
         <Setter Property="FontFamily" Value="OpenSansRegular"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="MinimumHeightRequest" Value="44"/>
         <Setter Property="MinimumWidthRequest" Value="44"/>
-        <Setter Property="VisualStateManager.VisualStateGroups">
-            <VisualStateGroupList>
-                <VisualStateGroup x:Name="CommonStates">
-                    <VisualState x:Name="Normal" />
-                    <VisualState x:Name="Disabled">
-                        <VisualState.Setters>
-                            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}" />
-                        </VisualState.Setters>
-                    </VisualState>
-                </VisualStateGroup>
-            </VisualStateGroupList>
-        </Setter>
+        <Style.Triggers>
+            <Trigger TargetType="RadioButton" Property="IsChecked" Value="True">
+                <Setter Property="BackgroundColor" Value="BlanchedAlmond" />
+                <Setter Property ="TextColor" Value="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource SecondaryDarkText}}"/>
+                <Setter Property="FontSize" Value="30"/>
+            </Trigger>
+           
+        </Style.Triggers>
     </Style>
 
     <Style TargetType="RefreshView">
@@ -346,30 +318,18 @@
     <Style TargetType="Switch">
         <Setter Property="OnColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
         <Setter Property="ThumbColor" Value="{StaticResource White}" />
-        <Setter Property="VisualStateManager.VisualStateGroups">
-            <VisualStateGroupList>
-                <VisualStateGroup x:Name="CommonStates">
-                    <VisualState x:Name="Normal" />
-                    <VisualState x:Name="Disabled">
-                        <VisualState.Setters>
-                            <Setter Property="OnColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}" />
-                            <Setter Property="ThumbColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}" />
-                        </VisualState.Setters>
-                    </VisualState>
-                    <VisualState x:Name="On">
-                        <VisualState.Setters>
-                            <Setter Property="OnColor" Value="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Gray200}}" />
-                            <Setter Property="ThumbColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
-                        </VisualState.Setters>
-                    </VisualState>
-                    <VisualState x:Name="Off">
-                        <VisualState.Setters>
-                            <Setter Property="ThumbColor" Value="{AppThemeBinding Light={StaticResource Gray400}, Dark={StaticResource Gray500}}" />
-                        </VisualState.Setters>
-                    </VisualState>
-                </VisualStateGroup>
-            </VisualStateGroupList>
-        </Setter>
+        <Style.Triggers>
+            <Trigger TargetType="Switch" Property="IsToggled" Value="True">
+                <Setter Property="OnColor" Value="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Gray200}}" />
+                <Setter Property="ThumbColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+            </Trigger>
+            <Trigger TargetType="Switch" Property="IsToggled" Value="False">
+                <Setter Property="ThumbColor" Value="{AppThemeBinding Light={StaticResource Gray400}, Dark={StaticResource Gray500}}" />
+            </Trigger>
+        </Style.Triggers>
+        
+       
+        
     </Style>
 
     <Style TargetType="TimePicker">
